@@ -51,7 +51,7 @@ namespace WebTestExecutor
                 string step = steps[i];
                 Console.WriteLine($"Step {i + 1}: {step}");
                 ExecuteStep(driver, step);
-                CaptureScreenshot(driver, i + 1);
+                CaptureScreenshot(driver, i + 1, step);
             }
 
             Console.WriteLine("Test execution complete.");
@@ -87,13 +87,16 @@ namespace WebTestExecutor
             }
         }
 
-        static void CaptureScreenshot(IWebDriver driver, int index)
+        static void CaptureScreenshot(IWebDriver driver, int index, string step)
         {
             try
             {
                 var screenshot = ((ITakesScreenshot)driver).GetScreenshot();
-                string file = Path.Combine("Screenshots", $"step{index:00}.png");
-                screenshot.SaveAsFile(file, ScreenshotImageFormat.Png);
+                string safeStep = new string(step.Where(ch => !Path.GetInvalidFileNameChars().Contains(ch)).ToArray());
+                if (safeStep.Length > 20)
+                    safeStep = safeStep.Substring(0, 20);
+                string file = Path.Combine("Screenshots", $"step{index:00}_{safeStep}.png");
+                screenshot.SaveAsFile(file, OpenQA.Selenium.ScreenshotImageFormat.Png);
                 Console.WriteLine($"Saved screenshot: {file}");
             }
             catch (Exception ex)

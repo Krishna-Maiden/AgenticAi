@@ -24,3 +24,5 @@ This repository contains a simple C# project that demonstrates how to generate a
    ```bash
    dotnet run --project WebTestExecutor "Login scenario"
    ```
+
+   Screenshots for each generated step will be stored in the `Screenshots` folder.
