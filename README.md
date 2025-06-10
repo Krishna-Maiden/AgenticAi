@@ -6,6 +6,7 @@ This repository contains a simple C# project that demonstrates how to generate a
 
 - **AutomatedTesting.sln** – Solution file containing the `OpenAITestGenerator` console application.
 - **OpenAITestGenerator** – Console application that calls the OpenAI API to generate C# test code.
+- **GeneratedTests** – xUnit test project where OpenAI generates test files.
 
 ## Usage
 
@@ -17,4 +18,4 @@ This repository contains a simple C# project that demonstrates how to generate a
    dotnet run --project OpenAITestGenerator
    ```
 
-4. When prompted, enter a description of the UI or API scenario you want tests for. The generated C# test script will be displayed and saved to `GeneratedTest.cs`.
+4. When the program starts you will be asked to either upload a user story or select an existing one from the `UserStories` folder. Selecting a story will trigger test generation and attempt to run the generated tests inside the `GeneratedTests` project. The application will create the `UserStories` folder automatically if it does not exist.
