@@ -1,0 +1,10 @@
+# Build artifacts
+bin/
+obj/
+# User-specific files
+*.user
+*.suo
+GeneratedTests/bin/
+GeneratedTests/obj/
+GeneratedTests/GeneratedTest.cs
+UserStories/
