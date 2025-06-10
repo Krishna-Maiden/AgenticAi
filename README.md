@@ -17,5 +17,4 @@ This repository contains a simple C# project that demonstrates how to generate a
    ```bash
    dotnet run --project OpenAITestGenerator
    ```
-
 4. When the program starts you will be asked to either upload a user story or select an existing one from the `UserStories` folder. Selecting a story will trigger test generation and attempt to run the generated tests inside the `GeneratedTests` project. The application will create the `UserStories` folder automatically if it does not exist.

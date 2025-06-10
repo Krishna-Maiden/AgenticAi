@@ -16,7 +16,7 @@ class Program
             return;
         }
 
-        string root = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, ".."));
+string root = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, ".."));
         string storyDir = Path.Combine(root, "UserStories");
         string testProjDir = Path.Combine(root, "GeneratedTests");
         string testFile = Path.Combine(testProjDir, "GeneratedTest.cs");
